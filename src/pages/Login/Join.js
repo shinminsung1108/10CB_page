@@ -6,8 +6,13 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
+import axios from "axios";
+import { api } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 export function Join() {
+  const navigate = useNavigate();
+  
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -21,12 +26,21 @@ export function Join() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  console.log("username", user.username);
-  console.log("password", user.password);
-  console.log("tier", user.tier);
-  console.log("race", user.race);
-  console.log("race2", user.race2);
-  console.log("race3", user.race3);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const data = user;
+      const response = await axios.post(`${api}/user/register`, data);
+      const result = await response.data;
+      console.log(result);
+      if (result.success) {
+        navigate("/Login");
+      }
+      alert("회원가입에 성공하였습니다!");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container maxWidth="sm">
@@ -116,6 +130,7 @@ export function Join() {
           />
           <Box>
             <Button
+              onClick={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
