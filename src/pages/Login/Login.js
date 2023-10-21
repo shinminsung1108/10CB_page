@@ -34,7 +34,7 @@ export function Login() {
       console.log(result.user);
   
       if (result.success === true) {
-        alert(`로그인에 성공하였습니다! ${loginUser.username}`);
+        alert(`${loginUser.username}님 환영합니다`);
         dispatch(setUser(result.user));
         navigate("/Home");
       } else {

@@ -5,6 +5,7 @@ import store, { persistor } from "../src/pages/Login/Store"
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { Home } from "./components/Home";
+import { MyProfile } from "./pages/profile/MyProfile";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Join" element={<Join />} />
+          <Route path="/My" element={<MyProfile />} />
         </Routes>
       </BrowserRouter>
       </PersistGate>
