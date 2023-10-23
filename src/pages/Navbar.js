@@ -19,7 +19,6 @@ import {
     Divider, Drawer, List, ListItem, ListItemButton,
     ListItemText
 } from "@mui/material";
-import Link from '@mui/material/Link';
 
 export function Navbar(props) {
     // @ts-ignore
@@ -98,7 +97,7 @@ export function Navbar(props) {
 
     return (
         <Box sx={{ display: 'flex'}}>
-            <AppBar component="nav" style={{ backgroundColor: "#DBA901", position: "relative" }}>
+            <AppBar component="nav" style={{ backgroundColor: "#070719", position: "relative" }}>
                 <Toolbar style={{ justifyContent: "space-between" }} >
                     <IconButton
                         color="inherit"
@@ -124,7 +123,7 @@ export function Navbar(props) {
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' }, marginRight: 5 }}>
                         <Button key="1" sx={{ color: '#fff' }}>리그일정</Button>
-                        <Button key="2" sx={{ color: '#fff' }} href='https://open.kakao.com/o/gR30yMmf'>카카오톡</Button>
+                        <Button key="2" sx={{ color: '#fff' }} href='https://www.youtube.com/@op10CB' target='_blank'>유튜브</Button>
                         <Button key="3" sx={{ color: '#fff' }}>공지사항</Button>
                     </Box>
 
